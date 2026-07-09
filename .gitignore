@@ -15,4 +15,5 @@ backend/**/__pycache__/
 backend/*.pyc
 
 # misc
-.DS_Store
+.DS_Storepip freeze > requirements.txt
+
