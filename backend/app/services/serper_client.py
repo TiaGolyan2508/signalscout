@@ -34,3 +34,9 @@ def search_companies(query: str, num_results: int = 10):
         })
 
     return results
+from urllib.parse import urlparse
+
+def extract_domain(url: str) -> str:
+    """Extract clean domain from a full URL, e.g. https://stripe.com/about -> stripe.com"""
+    netloc = urlparse(url).netloc
+    return netloc.replace("www.", "")
