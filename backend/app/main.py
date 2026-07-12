@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.routes import search, enrich, pipeline
+from app.api.routes import search, enrich, pipeline, history
 
 app = FastAPI(title="SignalScout API")
 
@@ -15,6 +15,7 @@ app.add_middleware(
 app.include_router(search.router, prefix="/api", tags=["search"])
 app.include_router(enrich.router, prefix="/api", tags=["enrich"])
 app.include_router(pipeline.router, prefix="/api", tags=["pipeline"])
+app.include_router(history.router, prefix="/api", tags=["history"])
 
 @app.get("/")
 def root():
